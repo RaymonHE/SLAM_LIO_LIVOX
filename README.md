@@ -23,6 +23,8 @@ FindEigen3.cmake provides eigen version, the eigen include directory and its ver
 ### src
 There are two parts in src. The first is segment segmentation. segment.cpp completes the function of removing dynamic objects from the radar point cloud. pointsCorrect completes the function of making the distribution of feature points larger and more uniform.
 
+LiDARFeatureExtractor and ScanRegistration belong to the front feature extraction, and the rest belong to the state estimation part. PoseEstimation provides the big framework, which has the methods of distortion, and the loopback feedback of the final pose. Estimator is responsible for processing the map from mapManager, and there is some processing between points and lines.
+
 
 
 
