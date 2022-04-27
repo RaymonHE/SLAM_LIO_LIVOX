@@ -1,5 +1,6 @@
 # Code Structure of LIO-Livox (A Robust LiDAR-Inertial Odometry for Livox LiDAR)
 This readme file is a code explaination of code structure of LIO-Livox **Developer**: [Livox](www.livoxtech.com). 
+Besides, this whole project aims to assist me to study LIO-livox itself, if anything goes wrong, please contact me with 11811711@mail.sustech.edu.cn without any hesitation. I hope this could also be helpful if you learn this too, and you are warmly welcome to create a discussion or submit a issue.
 
 This algorithm implements a robust SLAM algorithm on Livox LiDARs with built-in IMU.
 
