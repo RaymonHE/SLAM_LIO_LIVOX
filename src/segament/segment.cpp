@@ -1,16 +1,17 @@
-#include "segment/segment.hpp"
+#include "segment/segment.hpp"  //Concludes a head file segement.hpp named segment
 
-#define N_FRAME 5
+#define N_FRAME 5 // Defines a macro with a value 5
 
-float tmp_gnd_pose[100*6];
+float tmp_gnd_pose[100*6]; //Defines a float array of length 600
 int tem_gnd_num = 0;
-
+//Defines a constructor without parameters.
 PCSeg::PCSeg()
 {
     this->posFlag=0;
-    this->pVImg=(unsigned char*)calloc(DN_SAMPLE_IMG_NX*DN_SAMPLE_IMG_NY*DN_SAMPLE_IMG_NZ,sizeof(unsigned char));
+    this->pVImg=(unsigned char*)calloc(DN_SAMPLE_IMG_NX*DN_SAMPLE_IMG_NY*DN_SAMPLE_IMG_NZ,sizeof(unsigned char));//Allocates memory to array and returns a pointer with the first byte. 
     this->corPoints=NULL;
 }
+//Defines a deconstructor, empty the pVImg and corPoints
 PCSeg::~PCSeg()
 {
     if(this->pVImg!=NULL)
