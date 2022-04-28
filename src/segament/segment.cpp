@@ -24,11 +24,11 @@ PCSeg::~PCSeg()
     }
 }
 
-int PCSeg::DoSeg(int *pLabel1, float* fPoints1, int pointNum)
+int PCSeg::DoSeg(int *pLabel1, float* fPoints1, int pointNum)//Defines a class function
 {
 
-    // 1 down sampling
-    float *fPoints2=(float*)calloc(pointNum*4,sizeof(float));
+    // down sampling
+    float *fPoints2=(float*)calloc(pointNum*4,sizeof(float)); //defines a float array and allocates memory
     int *idtrans1=(int*)calloc(pointNum,sizeof(int));
     int *idtrans2=(int*)calloc(pointNum,sizeof(int));
     int pntNum=0;
