@@ -24,20 +24,20 @@ PCSeg::~PCSeg()
     }
 }
 
-int PCSeg::DoSeg(int *pLabel1, float* fPoints1, int pointNum)//Defines a class function
+int PCSeg::DoSeg(int *pLabel1, float* fPoints1, int pointNum)//Defines a class function, execute segmentation.
 {
 
     // down sampling
-    float *fPoints2=(float*)calloc(pointNum*4,sizeof(float)); //defines a float array and allocates memory
+    float *fPoints2=(float*)calloc(pointNum*4,sizeof(float)); //defines a float array and allocates memory with length and type.
     int *idtrans1=(int*)calloc(pointNum,sizeof(int));
     int *idtrans2=(int*)calloc(pointNum,sizeof(int));
     int pntNum=0;
     if (this->pVImg == NULL)
     {
         this->pVImg=(unsigned char*)calloc(DN_SAMPLE_IMG_NX*DN_SAMPLE_IMG_NY*DN_SAMPLE_IMG_NZ,sizeof(unsigned char));
-    }
+    }//Checks whether pVImg is an empty array and allocates memory if so.
     memset(pVImg,0,sizeof(unsigned char)*DN_SAMPLE_IMG_NX*DN_SAMPLE_IMG_NY*DN_SAMPLE_IMG_NZ);//600*200*30  
-    
+    //复制字符 0（一个无符号字符）到参数 pvImg 所指向的字符串的前 600*200*30 个字符
     for(int pid=0;pid<pointNum;pid++)
     {
         int ix=(fPoints1[pid*4]+DN_SAMPLE_IMG_OFFX)/DN_SAMPLE_IMG_DX; //0-240m -> -40-190m
